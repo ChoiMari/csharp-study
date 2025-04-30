@@ -20,8 +20,7 @@ namespace WindowsFormsApp_05_user_input_practice
         }
 
         //이벤트 리스너가 듣고 있다가 button_input 클릭 이벤트 발생 시 해당 코드 실행
-        private void button_input_Click(object sender, EventArgs e)
-        {
+        private void button_input_Click(object sender, EventArgs e) {
 
             bool userInput;
             bool result;
@@ -29,44 +28,36 @@ namespace WindowsFormsApp_05_user_input_practice
             // if문 실습에서 사용했던 동전 던지기 함수를 사용자 입력을 받아서 처리
 
             if (textBox_input.Text == "true" || textBox_input.Text == "True"
-                              || trueButton.Checked == true)
-            {
+                              || trueButton.Checked == true) {
+
                 userInput = true;
 
                 result = CoinTossing(userInput);
                 
                 // textBox_result에 결과 출력
-                if (result)
-                {
+                if (result) {
                     textBox_result.Text = "동전 던지기 결과 : 승리!.!";
-                }
-                else
-                {
+                } else {
                     textBox_result.Text = "동전 던지기 결과 : 패배 ㅜ.ㅠ";
                 }
-            }
-            else if (textBox_input.Text == "false" || textBox_input.Text == "False"
-                              || falseButton.Checked == true)
-            {
+
+            } else if (textBox_input.Text == "false" || textBox_input.Text == "False"
+                              || falseButton.Checked == true) {
                 userInput = false;
 
                 result = CoinTossing(userInput);
 
                 // textBox_result에 결과 출력
-                if (result)
-                {
+                if (result) {
                     textBox_result.Text = "동전 던지기 결과 : 승리!.!";
-                }
-                else
-                {
+                } else {
                     textBox_result.Text = "동전 던지기 결과 : 패배 ㅜ.ㅠ";
                 }
-            } 
-            else if (textBox_input.Text == "" || trueButton.Checked == false
+
+            } else if (textBox_input.Text == "" || trueButton.Checked == false
                         || falseButton.Checked == false) {
                 textBox_result.Text = "error : 값을 입력/선택해주세요";
-            }
-            else {
+            } else {
                 textBox_result.Text = "error : true 또는 false를 입력하세요.";
             }
 
@@ -74,7 +65,7 @@ namespace WindowsFormsApp_05_user_input_practice
 
         }
 
-        // 동전 던지기 함수
+        // 동전 던지기 함수 정의 
         public bool CoinTossing(bool userInput) {
             
             // 동전 앞 면 = true = 1
