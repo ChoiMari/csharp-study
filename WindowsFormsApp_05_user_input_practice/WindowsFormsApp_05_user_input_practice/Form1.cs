@@ -22,8 +22,9 @@ namespace WindowsFormsApp_05_user_input_practice
         //이벤트 리스너가 듣고 있다가 button_input 클릭 이벤트 발생 시 해당 코드 실행
         private void button_input_Click(object sender, EventArgs e) {
 
-            bool userInput;
-            bool result;
+            bool userInput;// 사용자 입력값을 저장
+
+            bool result; // 난수와 사용자의 입력값을 비교한 결과를 저장
 
             // if문 실습에서 사용했던 동전 던지기 함수를 사용자 입력을 받아서 처리
 
@@ -43,6 +44,7 @@ namespace WindowsFormsApp_05_user_input_practice
 
             } else if (textBox_input.Text == "false" || textBox_input.Text == "False"
                               || falseButton.Checked == true) {
+
                 userInput = false;
 
                 result = CoinTossing(userInput);
@@ -54,11 +56,11 @@ namespace WindowsFormsApp_05_user_input_practice
                     textBox_result.Text = "동전 던지기 결과 : 패배 ㅜ.ㅠ";
                 }
 
-            } else if (textBox_input.Text == "" || trueButton.Checked == false
-                        || falseButton.Checked == false) {
+            } else if (textBox_input.Text == "" || (trueButton.Checked == false
+                        && falseButton.Checked == false)) {
                 textBox_result.Text = "error : 값을 입력/선택해주세요";
             } else {
-                textBox_result.Text = "error : true 또는 false를 입력하세요.";
+                textBox_result.Text = "error : true 또는 false를 입력/선택 하세요.";
             }
 
 
