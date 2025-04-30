@@ -56,7 +56,7 @@ namespace WindowsFormsApp_05_user_input_practice
                     textBox_result.Text = "동전 던지기 결과 : 패배 ㅜ.ㅠ";
                 }
 
-            } else if (textBox_input.Text == "" || (trueButton.Checked == false
+            } else if (textBox_input.Text == "" && (trueButton.Checked == false
                         && falseButton.Checked == false)) {
                 textBox_result.Text = "error : 값을 입력/선택해주세요";
             } else {
