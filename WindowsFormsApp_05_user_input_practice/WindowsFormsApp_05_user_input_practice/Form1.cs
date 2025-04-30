@@ -33,13 +33,15 @@ namespace WindowsFormsApp_05_user_input_practice
 
                 userInput = true;
 
+                textBox_result.Text = "입력하신 값은 : " + userInput.ToString() + "입니다. \r\n";
+
                 result = CoinTossing(userInput);
                 
                 // textBox_result에 결과 출력
                 if (result) {
-                    textBox_result.Text = "동전 던지기 결과 : 승리!.!";
+                    textBox_result.Text += "동전 던지기 결과 : 승리!.!";
                 } else {
-                    textBox_result.Text = "동전 던지기 결과 : 패배 ㅜ.ㅠ";
+                    textBox_result.Text += "동전 던지기 결과 : 패배 ㅜ.ㅠ";
                 }
 
             } else if (textBox_input.Text == "false" || textBox_input.Text == "False"
@@ -47,13 +49,15 @@ namespace WindowsFormsApp_05_user_input_practice
 
                 userInput = false;
 
+                textBox_result.Text = "입력하신 값은 : " + userInput.ToString() + "입니다. \r\n";
+
                 result = CoinTossing(userInput);
 
                 // textBox_result에 결과 출력
                 if (result) {
-                    textBox_result.Text = "동전 던지기 결과 : 승리!.!";
+                    textBox_result.Text += "동전 던지기 결과 : 승리!.!";
                 } else {
-                    textBox_result.Text = "동전 던지기 결과 : 패배 ㅜ.ㅠ";
+                    textBox_result.Text += "동전 던지기 결과 : 패배 ㅜ.ㅠ";
                 }
 
             } else if (textBox_input.Text == "" && (trueButton.Checked == false
@@ -90,3 +94,60 @@ namespace WindowsFormsApp_05_user_input_practice
         }// 동전 던지기 함수 끝
     }
 }
+
+
+/* 
+ 리더님 풀이
+
+#region #1-3 실습) 사용자 입력 받기 - 이벤트 처리
+private void button_input_Click(object sender, EventArgs e)
+{
+    textBox_result.Text = textBox_input.Text;
+
+    bool input = false; // 기본값 설정.
+
+    // 1. textBox_input에 문자열의 길이가 0보다 클 경우 == 뭐라도 적혀 있는 경우
+    if (textBox_input.Text.Length > 0)
+    {
+        string inputText = textBox_input.Text;
+
+        if (!(inputText == "true" || inputText == "false"))
+        {
+            textBox_result.Text = "Error: true 또는 false 만 입력해주세요.";
+            return;
+            // void 타입 함수에서 return을 사용하면 아무것도 반환하지 않고 함수 종료.
+            // ㄴ "함수 실행을 멈추고 빠져나온다" 라는 의미.
+        }
+        else
+        {
+            input = bool.Parse(inputText); // inputText = "true" or "false"
+        }
+    }
+    else if (radioButton_true.Checked) // radio버튼 true의 Checked 속성 값이 true 라면~ {} 실행
+    {
+        input = true;
+    }
+    else if (radioButton_false.Checked) 
+    {
+        input = false;
+    }
+
+    textBox_result.Text = "입력하신 값은" + input.ToString() + "입니다! \r\n";
+    textBox_result.Text += "동전 던지기 결과... \r\n";
+
+    string gameResultMessage;
+    if (CoinMatch(input) == true)
+    {
+        gameResultMessage = "승리 ~!";
+    }
+    else
+    {
+        gameResultMessage = "패배 ..ㅠ";
+    }
+    textBox_result.Text += gameResultMessage + "\r\n";
+}
+
+#endregion
+ 
+ 
+ */
