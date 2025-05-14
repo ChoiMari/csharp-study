@@ -40,6 +40,7 @@ namespace WindowsFormsApp_13_Exception
                     }
 
                     Console.WriteLine("\r\n닉네임이 정상 등록 되었습니다.\r\n");
+                    Console.WriteLine("프로그램을 종료합니다.\r\n");
                     break;
                 }
                 catch (Exception ex)
@@ -68,7 +69,6 @@ namespace WindowsFormsApp_13_Exception
                 finally
                 {
                     Console.WriteLine("\r\n=======================================\r\n");
-                    Console.WriteLine("프로그램을 종료합니다.\r\n");
                 }
 
 
