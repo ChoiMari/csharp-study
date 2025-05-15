@@ -49,7 +49,7 @@ namespace WindowsFormsApp_15_Generic_Dictionary_practice
 
                 // 반복문 돌림
                 while ((_line = sr.ReadLine()) != null) {
-                    // ReadLine() 한 줄 읽고 문자를 데이터로 반환
+                    // ReadLine() 한 줄 읽고 문자열을 데이터로 반환
                     // 입력스트림의 끝에 도달할 경우 null을 리턴한다고 함
                     _lines = _line.Split(','); //한 줄씩 읽은 걸 ,로 잘라서 string 배열로 반환
                     int.TryParse(_lines[1], out int pwd); // 비밀번호 int타입으로 변경
